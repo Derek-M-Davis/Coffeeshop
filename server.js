@@ -6,11 +6,12 @@ const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 
 // Database
 
 const MONGODB_URI = process.env.MONGODB_URI
+console.log(MONGODB_URI)
 
 mongoose.connect(MONGODB_URI), {useNewUrlParser: true, useUnifiedTopology:true, useFindAndModify:false, useCreateIndex: true }
 
@@ -26,6 +27,7 @@ app.use(express.static('public'))
 // populate req.body with parsed info from forms
 app.use(express.urlencoded({extended:false}))
 
+app.use(express.json())
 // Be able to use delete and out routs
 app.use(methodOverride('method'))
 
