@@ -8,9 +8,9 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
-// Create Route not tested
+// Create Route tested
 router.post('/', (req, res) => {
-    res.send('show.ejs')
+    res.send(req.body)
     console.log(req.body)
 })
 
