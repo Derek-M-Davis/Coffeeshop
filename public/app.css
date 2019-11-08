@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(212, 211, 193);
+
+};
+
+.column {
+    display: inline;
+};
+
+.socials img {
+    height: 50px;
+    width: 50px
+};
+
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+};
