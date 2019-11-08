@@ -28,14 +28,6 @@ app.use(express.json())
 // Be able to use delete and out routes
 app.use(methodOverride('method'))
 
-// app.get('/', (req, res) => {
-//     res.render('index.ejs')
-// })
-
-// app.get('/new', (req, res) => {
-//     res.render('new.ejs')
-// })
-
 
 // ==============Error/Server Status================ /
 
