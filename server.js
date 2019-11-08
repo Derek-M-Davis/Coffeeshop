@@ -2,7 +2,7 @@
 const express        = require('express')
 const methodOverride = require('method-override')
 const mongoose       = require('mongoose')
-const bootstrap      = require('bootstrap')
+// const bootstrap      = require('bootstrap')
 const app            = express()
 const db             = mongoose.connection
 const PORT           = process.env.PORT || 3000;
