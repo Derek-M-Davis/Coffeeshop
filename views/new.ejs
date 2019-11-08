@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>New Item</title>
+    <% include ./partials/head.ejs %>
 </head>
 <body>
     <h1>New Item page</h1>
@@ -13,5 +12,7 @@
         Notes: <input type="text" name="notes" /><br/>
         Description: <input type="text" name="description" /><br/>
         <input type="submit" name="" value="Create Item"/>
+        
+ <% include ./partials/foot.ejs %>
 </body>
 </html>
