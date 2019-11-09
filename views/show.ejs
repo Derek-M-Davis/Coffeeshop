@@ -4,9 +4,13 @@
     <% include ./partials/head.ejs %>
 </head>
 <body>
-    <h1>Placeholder title for show page</h1>
+    <% include ./partials/header.ejs %>
+
+    <h1>Product Details</h1>
+    Title: <%=shop.name%> <br>
+    Price: <%=shop.price%> <br>
     
-    
+    <a href="/shop/products/<%=shop.id%>/edit">Edit log</a><br>
 
     <a href="/shop/products">Back to Products</a>
 
