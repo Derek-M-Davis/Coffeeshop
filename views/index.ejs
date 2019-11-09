@@ -4,27 +4,19 @@
     <% include ./partials/head.ejs %>
 </head>
 <body>
-    <!------- Nav Header ------------>
-    <nav>
-        <a href="">Coffee</a>
-        <a href="">Tea</a>
-        <a href="">Pairings</a>
-        <a href="">Brew Guides/Equipment</a>
-        <a href="">IRL Coffee</a>
-    </nav>
     <!------- Page Header ------------>
-    <h1>Coffee 101</h1>
+    <% include ./partials/header.ejs %>
     <!------- Left Column ------------>
     <div class="column">
         <h2>Why?</h2>
             <p>Sustainablility and coffee economics have been a huge debate for the past ten or so years. Seeing large corporations take over landscapes to grow their coffee at the lowest possible price has shown the light on the sustainablilityand overall economy of coffee around the globe.</p>
         <h2>Points of interest</h2>
         <ul>
-            <li><a href="">Coffee</a></li>
+            <li><a href="/shop/products">Coffee</a></li>
             <li><a href="">Tea</a></li> 
-            <li><a href="">Pairings</a></li>
-            <li><a href="">Brew Guides/Equipment</a></li>
-            <li><a href="">IRL Coffee</a></li>
+            <li><a href="/shop/pairings">Pairings</a></li>
+            <li><a href="/shop/brewguide">Brew Guides/Equipment</a></li>
+            <li><a href="/shop/map">IRL Coffee</a></li>
         </ul>
     </div>
     <!------- Right Column ------------>
@@ -50,7 +42,8 @@
         }
 
         img {
-            border-radius: 15px;
+            border-radius: 60px;
+            padding:5px;
         }
 </body>
 </html>
