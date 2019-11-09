@@ -7,16 +7,13 @@ const app            = express()
 const db             = mongoose.connection
 const PORT           = process.env.PORT || 3000;
 require('dotenv').config()
-// ============= Controllers ================= //
-const shopsController = require('./controllers/shop.js');
-app.use('/shop', shopsController);
 
 // ================ Database ================ //
 
 const MONGODB_URI = process.env.MONGODB_URI
 console.log(MONGODB_URI)
 
-mongoose.connect(MONGODB_URI), {useNewUrlParser: true, useUnifiedTopology:true, useFindAndModify:false, useCreateIndex: true }
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology:true, useFindAndModify:false, useCreateIndex: true })
 
 // ============== Middleware =================== //
 // use public folder for static assets
@@ -27,6 +24,11 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 // Be able to use delete and out routes
 app.use(methodOverride('method'))
+
+// ============= Controllers ================= //
+const shopsController = require('./controllers/shop.js');
+app.use('/shop', shopsController);
+
 
 
 // ==============Error/Server Status================ /
