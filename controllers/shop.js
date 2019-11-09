@@ -3,6 +3,34 @@ const express = require('express')
 const router = express.Router()
 const Shop = require('../models/shop.js')
 
+router.get('/seed', (req, res) => {
+    Shop.create(
+        [
+            {
+                name:'Columbian',
+                price:12,
+                notes:'chocolate',
+                description:'tradional coffee',
+                img:'/cupWithCookie,jpg'
+            },
+            {
+                name:'grape',
+                color:'purple',
+                readyToEat:false
+            },
+            {
+                name:'avocado',
+                color:'green',
+                readyToEat:true
+            }
+        ],
+        (error, data) => {
+            res.redirect('/products')
+        }
+    )
+});
+
+
 // New Item Route tested
 router.get('/products/new', (req, res) => {
     res.render('new.ejs')
@@ -10,19 +38,33 @@ router.get('/products/new', (req, res) => {
 
 // Create Route tested
 router.post('/', (req, res) => {
-    // if (req.body.img === ""){
-    //     req.body.img = './public/imgs/happy-coffee.jpg'
-    // }
+    if (req.body.img === ""){
+        req.body.img = '/imgs/happy-coffee.jpg'
+    }
     Shop.create(req.body, (error, newItem) => {
-        res.send(newItem)
+        console.log(req.body)
+        res.redirect('shop/products')
     })
-    console.log(req.body)
+   
    
 })
 
 // Index Route tested
 router.get('/', (req, res) => {
     res.render('index.ejs')
+})
+
+// Pairings Route tested
+router.get('/pairings', (req, res) => {
+    res.render('pairings.ejs')
+})
+// Brewguide Route tested
+router.get('/brewguide', (req, res) => {
+    res.render('brewguide.ejs')
+})
+// Map Route tested
+router.get('/map', (req, res) => {
+    res.render('map.ejs')
 })
 
 // Products page tested-no data yet
@@ -35,7 +77,7 @@ router.get('/products', (req, res) => {
 })
 
 
-// Show Route untested no data yet
+// Show Route tested
 router.get('/products/:id', (req, res) => {
     Shop.findById(req.params.id, (error, foundShop) =>{
         res.render('show.ejs', {
@@ -44,7 +86,7 @@ router.get('/products/:id', (req, res) => {
     }) 
 })
 
-// Edit Route
+// Edit Route broken
 router.get('/prducts/:id/edit', (req, res) => {
     Shop.findById(req.params.id, (error, foundShop) =>{
         res.render('edit.ejs', {
@@ -53,10 +95,10 @@ router.get('/prducts/:id/edit', (req, res) => {
     })
 })
 
-// Delete Route
-router.delete('/products/:id',(req, res) => {
+// Delete Route broken
+router.delete('/products/',(req, res) => {
     Shop.findByIdAndRemove(req.params.id, (error, deletedShop) => {
-        res.redirect('/products')
+        res.redirect('/')
     })
 })
 
