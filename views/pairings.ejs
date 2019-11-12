@@ -1,67 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <% include ./partials/head.ejs %>
+    <% include ./partials/head.ejs %>
 </head>
 <body>
-        <% include ./partials/header.ejs %>
+    <% include ./partials/header.ejs %>
 
     <h1>Common Coffee Pairings</h1>
     <div class='container'>
        <!-- First Row -->
         <div class="row">
             <div class="col">
-                <h4>Chocolate Chip Cookie</h4>
-                <img src="/imgs/chocolatechipcookie.jpg" alt="coffee with cookie">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/chocolatechipcookie.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Chocolate Chip Cookie</h5>
+                    </div>
+                </div>        
             </div>
             <div class="col">
-                <h4>Coffee Cake</h4>
-                <img src="/imgs/coffeecake.jpg" alt="coffee cake">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/coffeecake.jpg" class="card-img" alt="coffee cake">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Coffee Cake</h5>
+                    </div>    
+                </div>
             </div>
             <div class="col">
-                <h3>Eggs and Toast</h3>
-                <img src="/imgs/eggsandtoast.jpg" alt="eggs and toast">
+                    <div class="card bg-dark text-white">
+                        <img src="/imgs/eggsandtoast.jpg" class="card-img" alt="eggs and toast">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Eggs and Toast</h5>
+                        </div>
+                    </div>
             </div>
         </div>
-       <!-- Second Row -->
-
+      
+        <!-- Second Row -->
         <div class="row">
             <div class="col">
-                <h3>Avocado Toast</h3>
-                <img src="/imgs/avocadotoast.jpg" alt="avocadotoast">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/bananabread.jpg" class="card-img" alt="bananabread">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Banana chocolate Chip Bread</h5>
+                    </div>
+                </div>
             </div>
             <div class="col">
-                <h3>Banana chocolate Chip Bread</h3>
-                <img src="/imgs/bananabread.jpg" alt="bananabread">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/avocadotoast.jpg" class="card-img" alt="avocadotoast">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Avocado Toast</h5>
+                    </div>
+                </div>
             </div>
             <div class="col">
-                <h3>Puffed Pastries</h3>
-                <img src="/imgs/donuts.jpg" alt="donuts">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/donuts.jpg" class="card-img" alt="donuts">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Puffed Pastries</h5>
+                    </div>
+                </div>
             </div>
         </div>
        <!-- Third Row -->
 
         <div class="row">
             <div class="col">
-                <h3>Smoked Salmon Bagels</h3>
-                <img src="/imgs/smokedsalmonbagel.jpg" alt="smoked salmon bagel">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/smokedsalmonbagel.jpg" class="card-img" alt="smoked salmon bagel">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Smoked Salmon Bagels</h5>
+                    </div>
+                </div>
             </div>
             <div class="col">
-                <h3>Overnight Oats and Fruit</h3>
-                <img src="/imgs/overnightoatsandfruit.jpg" alt="overnight oats and fruit">
-            </div>
+                    <div class="card bg-dark text-white">
+                        <img src="/imgs/breakfastsandwich.jpg" class="card-img" alt="breakfast sandwich">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Breakfast Sandwich</h5>
+                        </div>
+                    </div>        
+                </div>
             <div class="col">
-                <h3>Breakfast Sandwich</h3>
-                <img src="/imgs/breakfastsandwich.jpg" alt="breakfast sandwich">
+                <div class="card bg-dark text-white">
+                    <img src="/imgs/overnightoatsandfruit.jpg" class="card-img" alt="overnight oats and fruit">
+                    <div class="card-img-overlay">
+                    <h5 class="card-title">Overnight Oats and Fruit</h5>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div>
-            <h3></h3>
-            <img src="/imgs/.jpg" alt="">
+           
         </div>
     </div>
     <% include ./partials/foot.ejs %>
-
 </body>
 </html>
