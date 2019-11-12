@@ -3,10 +3,9 @@ body {
 
 }
 
-.column {
-    display: inline-flex;
+h1 {
+    text-align: center;
 }
-
 .socials img {
     height: 50px;
     width: 50px
@@ -30,4 +29,14 @@ ul {
 a {
     text-decoration: none;
     color: black;
+}
+
+.video {
+    float: left;
+    width: 46%;
+    margin: 0 2% 4%;
+}
+
+footer {
+    text-align: center;
 }
