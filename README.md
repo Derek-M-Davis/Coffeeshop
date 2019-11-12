@@ -14,6 +14,7 @@
   -MognoDB  
   -Express  
   -EJS, EJS Partials  
+  -Googel Fonts
 
 
 #### Approach Taken
