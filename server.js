@@ -10,19 +10,19 @@ require('dotenv').config()
 // ================ Database ================ //
 
 const MONGODB_URI = process.env.MONGODB_URI
-console.log(MONGODB_URI)
+console.log(MONGODB_URI);
 
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology:true, useFindAndModify:false, useCreateIndex: true })
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology:true, useFindAndModify:false, useCreateIndex: true });
 
 // ============== Middleware =================== //
 // use public folder for static assets
-app.use(express.static('public'))
+app.use(express.static('public'));
 // populate req.body with parsed info from forms
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}));
 // Returns middlesware associated with JSON
-app.use(express.json())
+app.use(express.json());
 // Be able to use delete and put routes
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
 // ============= Controllers ================= //
 const shopsController = require('./controllers/shop.js');
