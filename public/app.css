@@ -1,11 +1,18 @@
 body {
     background-color: rgb(212, 211, 193);
-
+    font-family: 'Proza Libra', sans-serif;
+    margin: auto;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
 }
+
+p {
+justify-content: center;
+}
+
 .socials img {
     height: 50px;
     width: 50px
@@ -17,6 +24,17 @@ img {
     border-radius: 10px;
 }
 
+h5.card-title{
+    text-shadow: 2px 2px 7px black;
+    box-shadow: -10px 2px 7px sienna;
+}
+img.card {
+    max-height: 490px;
+    margin-bottom: 5px;
+}
+div.col{
+    padding: 15px;
+}
 .logo {
     height: 75px;
     width: 75px;
