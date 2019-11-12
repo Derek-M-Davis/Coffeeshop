@@ -9,10 +9,11 @@
     <h1>Coffee Details</h1>
     Title: <%=shop.name%> <br>
     Price: <%=shop.price%> <br>
+    Description:<br> <%=shop.description%> <br>
     
-    <a href="/shop/products/<%=shop.id%>/edit">Edit log</a><br>
+    <a href="/shop/<%=shop.id%>/edit">Edit log</a><br>
 
-    <a href="/shop/products">Back to Products</a>
+    <a href="/shop">Back to Products</a>
 
 
     <% include ./partials/foot.ejs %>

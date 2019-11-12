@@ -7,22 +7,22 @@
         <% include ./partials/header.ejs %>
 
         <h1>Coffee</h1>
-        <a href="/shop/products/new">Create New Product</a>
+        <a href="/shop/new">Create New Product</a>
         <ul>
             <% for(let i = 0; i < shop.length; i++){ %>
                 <div>
-                    <a href="/shop/products/<%=shop[i].id%>">
-                        <%=shop[i].img%>
+                    <%=shop[i].name; %><br>
+                    <%=shop[i].notes %><br>
+                    <a href="/shop/<%=shop[i].id%>">
+                        <%=shop[i].img%><br>
                     </a>
-                    <%=shop[i].name; %>
-                    <%=shop[i].notes %>
-                    <form action="/products/<%=shop[i].id%>?_method=DELETE" method="POST">
+                    <form action="/shop/<%=shop[i].id; %>?_method=DELETE" method="POST">
                         <input type="submit" value="DELETE">
                     </form>
                 </div>
             <% } %>
         </ul>
-        <a href="/shop">Back</a>
+        <a href="/">Back</a>
 
     <% include ./partials/foot.ejs %>
     </body>
