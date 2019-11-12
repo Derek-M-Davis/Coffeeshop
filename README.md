@@ -29,5 +29,5 @@
 See above
 
 #### Future goals
->Get the image to get yploaded, used the phrase get details for my seeded info since i have img clickable not the name. Get the google maps search to work since i think that will be the cherry on the top for it. 
+>Get the image to get uploaded, used the phrase get details for my seeded info since i have img clickable not the name. Get the google maps search to work since i think that will be the cherry on the top for it. 
 Get the store part of it to function with a sign in and cart to make it be full service not just informational
