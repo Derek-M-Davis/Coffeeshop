@@ -11,7 +11,7 @@ router.get('/seed', (req, res) => {
                 price:12,
                 notes:'chocolate',
                 description:'tradional coffee',
-                img:'/cupWithCookie,jpg'
+                img:'/cupWithCookie.jpg'
             },
             {
                 name:'grape',
@@ -96,8 +96,9 @@ router.get('/prducts/:id/edit', (req, res) => {
 })
 
 // Delete Route broken
-router.delete('/products/',(req, res) => {
+router.delete('/products/:id',(req, res) => {
     Shop.findByIdAndRemove(req.params.id, (error, deletedShop) => {
+         console.log(error)
         res.redirect('/')
     })
 })
@@ -112,7 +113,5 @@ router.put('/products/:id', (req,res) => {
         }
     )
 })
-
-
 
 module.exports = router;
