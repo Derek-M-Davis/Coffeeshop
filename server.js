@@ -2,7 +2,6 @@
 const express        = require('express')
 const methodOverride = require('method-override')
 const mongoose       = require('mongoose')
-// const bootstrap      = require('bootstrap')
 const app            = express()
 const db             = mongoose.connection
 const PORT           = process.env.PORT || 3000;
@@ -22,8 +21,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:true}))
 // Returns middlesware associated with JSON
 app.use(express.json())
-// Be able to use delete and out routes
-app.use(methodOverride('method'))
+// Be able to use delete and put routes
+app.use(methodOverride('_method'))
 
 // ============= Controllers ================= //
 const shopsController = require('./controllers/shop.js');
