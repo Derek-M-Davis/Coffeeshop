@@ -11,21 +11,25 @@ router.get('/seed', (req, res) => {
                 price:12,
                 notes:'chocolate',
                 description:'tradional coffee',
-                img:'/cupWithCookie.jpg'
+                img:'./public/imgs/cappuccino.jpg'
             },
-            {
-                name:'grape',
-                color:'purple',
-                readyToEat:false
-            },
-            {
-                name:'avocado',
-                color:'green',
-                readyToEat:true
-            }
+            // {
+            //     name:'Columbian',
+            //     price:12,
+            //     notes:'chocolate',
+            //     description:'tradional coffee',
+            //     img:'/cupWithCookie.jpg'
+            // },
+            // {
+            //     name:'Columbian',
+            //     price:12,
+            //     notes:'chocolate',
+            //     description:'tradional coffee',
+            //     img:'/cupWithCookie.jpg'
+            // }
         ],
         (error, data) => {
-            res.redirect('/products')
+            res.redirect('/shop')
         }
     )
 });
@@ -45,8 +49,41 @@ router.post('/', (req, res) => {
         console.log(req.body)
         res.redirect('shop/products')
     })
-   
-   
+})
+
+// Products page tested
+router.get('/products', (req, res) => {
+    Shop.find({}, (error, allShop) => {
+        res.render('products.ejs', {
+            shop: allShop
+         })
+    })
+})
+
+// Show Route tested
+router.get('/products/:id', (req, res) => {
+    Shop.findById(req.params.id, (error, foundShop) =>{
+        res.render('show.ejs', {
+            shop: foundShop
+        })
+    }) 
+})
+
+
+// Delete Route broken
+router.delete('/products/:id', (req, res) => {
+    Shop.findByIdAndRemove(req.params.id, (error, deletedShop) => {
+        res.redirect('/shop');
+    })
+})
+
+// Edit Route broken
+router.get('/products/:id/edit', (req, res) => {
+    Shop.findById(req.params.id, (error, foundShop) =>{
+        res.render('edit.ejs', {
+            shop: foundShop
+        })
+    })
 })
 
 // Index Route tested
@@ -67,49 +104,13 @@ router.get('/map', (req, res) => {
     res.render('map.ejs')
 })
 
-// Products page tested-no data yet
-router.get('/products', (req, res) => {
-    Shop.find({}, (error, allShop) => {
-        res.render('products.ejs', {
-            shop: allShop
-         })
-    })
-})
-
-
-// Show Route tested
-router.get('/products/:id', (req, res) => {
-    Shop.findById(req.params.id, (error, foundShop) =>{
-        res.render('show.ejs', {
-            shop: foundShop
-        })
-    }) 
-})
-
-// Edit Route broken
-router.get('/prducts/:id/edit', (req, res) => {
-    Shop.findById(req.params.id, (error, foundShop) =>{
-        res.render('edit.ejs', {
-            shop: foundShop
-        })
-    })
-})
-
-// Delete Route broken
-router.delete('/products/:id',(req, res) => {
-    Shop.findByIdAndRemove(req.params.id, (error, deletedShop) => {
-         console.log(error)
-        res.redirect('/')
-    })
-})
-
 // Put/Update Route
-router.put('/products/:id', (req,res) => {
+router.put('/:id', (req,res) => {
     Shop.findByIdAndUpdate(
         req.params.id, 
         req.body, 
         {new:true}, (error, updatedShop) => {
-        res.redirect('/products')
+        res.redirect('/shop')
         }
     )
 })
